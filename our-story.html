@@ -330,7 +330,7 @@ section{padding:100px 40px}
 
 
 <section class="page-hero">
-  <div class="page-hero-bg"><img src="assets/stupid-hour3.jpg" alt="Thirst Oxford bartenders"></div>
+  <div class="page-hero-bg"><video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover" id="heroVideo"><source src="assets/oxford-video3.mp4" type="video/mp4"></video></div>
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
     <span class="tag">Since 1999</span>
@@ -458,6 +458,7 @@ function uc(){
   }
 }
 setInterval(uc,1000);uc();
+(function(){var v=document.getElementById('heroVideo');if(!v)return;v.play().catch(function(){document.addEventListener('touchstart',function h(){v.play();document.removeEventListener('touchstart',h)},{once:true})})})();
 
 
 </script>
