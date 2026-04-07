@@ -72,17 +72,17 @@ body{font-family:'Belleza',serif;background:var(--bg);color:var(--white);overflo
 .btn-fill:hover{color:var(--violet)}
 
 /* ===== SIDE PANEL ===== */
-.side-panel{position:fixed;top:0;left:0;width:380px;max-width:85vw;height:100vh;background:var(--bg);z-index:950;transform:translateX(-100%);transition:transform .5s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;padding:80px 40px 40px;border-right:1px solid var(--white-10)}
+.side-panel{position:fixed;top:0;left:0;width:380px;max-width:85vw;height:100vh;background:var(--bg);z-index:1010;transform:translateX(-100%);transition:transform .5s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;padding:80px 40px 40px;border-right:1px solid var(--white-10)}
 .side-panel.open{transform:translateX(0)}
-.side-panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:940;opacity:0;pointer-events:none;transition:opacity .4s ease}
+.side-panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1005;opacity:0;pointer-events:none;transition:opacity .4s ease}
 .side-panel-overlay.open{opacity:1;pointer-events:all}
 .side-panel-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer;width:40px;height:40px;display:flex;align-items:center;justify-content:center}
 .side-panel nav{display:flex;flex-direction:column;flex:1}
 .side-panel a{font-family:'Jost',sans-serif;font-size:.85rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--white);text-decoration:none;padding:14px 0;border-bottom:1px solid var(--white-10);opacity:0;transform:translateX(-20px);transition:opacity .3s ease,transform .3s ease,color .2s ease}
 .side-panel.open a{opacity:1;transform:translateX(0)}
 .side-panel a:hover{color:var(--violet-bright)}
-.side-panel a.accent-link{color:var(--violet-bright)!important;font-weight:600}
-.side-panel-footer{margin-top:auto;padding-top:30px;border-top:1px solid var(--white-10)}
+.side-panel a.accent-link{color:var(--violet-bright)!important;font-weight:600;border-bottom:none}
+.side-panel-footer{margin-top:auto;padding-top:30px}
 .side-panel-footer p{font-family:'Jost',sans-serif;font-size:.7rem;color:var(--white-50);letter-spacing:.1em;line-height:1.8}
 .side-panel-social{display:flex;gap:16px;margin-bottom:16px}
 .side-panel-social a{border:none!important;padding:0!important;opacity:1!important;transform:none!important}
