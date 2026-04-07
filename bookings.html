@@ -262,33 +262,68 @@ section{padding:100px 40px}
 </style>
 <style>
 
-.page-hero{height:50vh;min-height:380px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.page-hero{height:70vh;min-height:500px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .page-hero-bg{position:absolute;inset:0}
-.page-hero-bg img{width:100%;height:100%;object-fit:cover}
-.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,8,21,.5),rgba(13,8,21,.9))}
+.page-hero-bg video,.page-hero-bg img{width:100%;height:100%;object-fit:cover}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,8,21,.4) 0%,rgba(13,8,21,.3) 50%,var(--bg) 100%)}
 .page-hero-content{position:relative;z-index:2;text-align:center;padding:0 30px}
-.page-hero-content .tag{font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--violet-bright);margin-bottom:16px;display:block}
-.page-hero-content h1{font-family:'Belleza',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:400}
-.booking-section{padding:80px 40px}
-.booking-inner{max-width:900px;margin:0 auto}
-.booking-block{margin-bottom:80px}
-.booking-block h2{font-family:'Belleza',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;margin-bottom:20px}
-.booking-block p{font-family:'Belleza',serif;font-size:1.05rem;color:var(--white-70);line-height:1.8;margin-bottom:20px}
-.booking-split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:80px}
-.booking-split img{width:100%;height:100%;object-fit:cover;border-radius:2px;aspect-ratio:4/3}
-.booking-form{background:var(--bg-card);padding:48px;border:1px solid var(--white-10);margin-top:40px}
-.booking-form h2{font-family:'Belleza',serif;font-size:1.6rem;font-weight:400;margin-bottom:32px}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.form-group{display:flex;flex-direction:column;gap:6px}
+.page-hero-content .tag{font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.35em;text-transform:uppercase;color:var(--violet-bright);margin-bottom:20px;display:block;opacity:0;animation:fadeUp .8s ease .3s forwards}
+.page-hero-content h1{font-family:'Belleza',serif;font-size:clamp(2.4rem,5.5vw,4rem);font-weight:400;opacity:0;animation:fadeUp .8s ease .5s forwards}
+.page-hero-content .hero-sub{font-family:'Belleza',serif;font-size:1.1rem;color:var(--white-70);margin-top:20px;opacity:0;animation:fadeUp .8s ease .7s forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+/* Full-bleed split sections */
+.split-full{display:grid;grid-template-columns:1fr 1fr;min-height:80vh}
+.split-full.reverse .split-media{order:2}
+.split-full.reverse .split-text{order:1}
+.split-media{position:relative;overflow:hidden}
+.split-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.split-media:hover img{transform:scale(1.03)}
+.split-text{display:flex;flex-direction:column;justify-content:center;padding:80px 80px}
+.split-text .tag{font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--violet-bright);margin-bottom:20px;display:block}
+.split-text h2{font-family:'Belleza',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.15;margin-bottom:28px}
+.split-text p{font-family:'Belleza',serif;font-size:1.1rem;color:var(--white-70);line-height:1.85;margin-bottom:24px}
+.split-text .btn{margin-top:12px}
+
+/* Private hire banner */
+.hire-banner{padding:120px 40px;text-align:center;position:relative;overflow:hidden}
+.hire-banner::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,var(--violet-glow) 0%,transparent 70%);pointer-events:none}
+.hire-inner{position:relative;max-width:600px;margin:0 auto}
+.hire-inner .tag{font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--violet-bright);margin-bottom:20px;display:block}
+.hire-inner h2{font-family:'Belleza',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;margin-bottom:24px}
+.hire-inner p{font-family:'Belleza',serif;font-size:1.1rem;color:var(--white-70);line-height:1.8;margin-bottom:32px}
+
+/* Form section */
+.form-section{padding:100px 40px;background:var(--bg-card)}
+.form-inner{max-width:700px;margin:0 auto}
+.form-inner h2{font-family:'Belleza',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;margin-bottom:12px;text-align:center}
+.form-inner .form-sub{font-family:'Belleza',serif;font-size:1rem;color:var(--white-50);text-align:center;margin-bottom:48px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.form-group{display:flex;flex-direction:column;gap:8px}
 .form-group.full{grid-column:1/-1}
-.form-group label{font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--white-50)}
-.form-group input,.form-group select,.form-group textarea{background:var(--bg);border:1px solid var(--white-15);padding:14px 16px;color:var(--white);font-family:'Jost',sans-serif;font-size:.85rem;outline:none;transition:border-color .2s ease}
+.form-group label{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--white-50)}
+.form-group input,.form-group select,.form-group textarea{background:var(--bg);border:1px solid var(--white-15);padding:16px 18px;color:var(--white);font-family:'Jost',sans-serif;font-size:.85rem;outline:none;transition:border-color .3s ease}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--violet-bright)}
-.form-group textarea{min-height:120px;resize:vertical}
-.form-group select{appearance:none}
-.form-submit{margin-top:24px}
-@media(max-width:900px){.booking-split{grid-template-columns:1fr}}
-@media(max-width:600px){.booking-form{padding:28px 20px}.form-grid{grid-template-columns:1fr}}
+.form-group textarea{min-height:140px;resize:vertical}
+.form-group select{appearance:none;cursor:pointer}
+.form-submit{margin-top:32px;text-align:center;grid-column:1/-1}
+
+/* Word reveal animation */
+.word-reveal .word{display:inline-block;opacity:0;transform:translateY(20px);transition:opacity .4s ease,transform .4s ease}
+.word-reveal.revealed .word{opacity:1;transform:translateY(0)}
+
+@media(max-width:900px){
+  .split-full{grid-template-columns:1fr;min-height:auto}
+  .split-full.reverse .split-media{order:1}
+  .split-full.reverse .split-text{order:2}
+  .split-media{height:50vh;min-height:300px}
+  .split-text{padding:60px 32px}
+}
+@media(max-width:600px){
+  .split-text{padding:48px 20px}
+  .form-grid{grid-template-columns:1fr}
+  .form-section{padding:60px 20px}
+}
 
 </style>
 </head>
@@ -338,55 +373,72 @@ section{padding:100px 40px}
 </aside>
 
 
+<!-- HERO -->
 <section class="page-hero">
-  <div class="page-hero-bg"><img src="assets/chill-out-lounge1.jpg" alt="Thirst Oxford Lounge"></div>
+  <div class="page-hero-bg"><video autoplay muted loop playsinline><source src="assets/oxford-video2.mp4" type="video/mp4"></video></div>
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
     <span class="tag">Plan Your Night</span>
     <h1>Bookings & Parties</h1>
+    <p class="hero-sub">Lock in your spot — we'll handle the rest</p>
   </div>
 </section>
 
-<section class="booking-section">
-  <div class="booking-inner">
-    <div class="booking-split reveal-up">
-      <div>
-        <span class="tag">Reserve</span>
-        <h2>Table Reservations</h2>
-        <p>We're here for the planners and the spontaneous — we always recommend booking a space, especially on busy weekends. We take table bookings for up to 25 people.</p>
-        <a href="https://www.designmynight.com/oxford/bars/oxford-city-centre/thirst-bar-oxford" target="_blank" rel="noopener" class="btn"><span>Book a Table</span></a>
-      </div>
-      <img src="assets/oxford-people4.jpg" alt="Friends at Thirst Oxford">
+<!-- TABLE RESERVATIONS -->
+<div class="split-full">
+  <div class="split-media reveal-scale">
+    <img src="assets/oxford-people3.jpg" alt="Friends enjoying drinks at Thirst Oxford">
+  </div>
+  <div class="split-text">
+    <span class="tag reveal-up">Reserve</span>
+    <h2 class="word-reveal">Table Reservations</h2>
+    <p class="reveal-up delay-2">We're here for the planners and the spontaneous — we always recommend booking a space, especially on busy weekends.</p>
+    <p class="reveal-up delay-3">We take table bookings for up to 25 people.</p>
+    <div class="reveal-up delay-4">
+      <a href="https://www.designmynight.com/oxford/bars/oxford-city-centre/thirst-bar-oxford" target="_blank" rel="noopener" class="btn"><span>Book a Table</span></a>
     </div>
+  </div>
+</div>
 
-    <div class="booking-split reveal-up" style="direction:rtl">
-      <div style="direction:ltr">
-        <span class="tag">Celebrate</span>
-        <h2>Birthdays & Celebrations</h2>
-        <p>Celebrating a birthday or special occasion with us? Lucky you. We know how to throw a good party.</p>
-        <p>Hire a table, a section or — for more exclusivity — our whole lounge area. Fill out the booking form and we take care of the rest. We're happy to help you plan if you have something special in mind.</p>
-      </div>
-      <img src="assets/oxford-people2.jpg" alt="Celebrations at Thirst" style="direction:ltr">
+<!-- BIRTHDAYS -->
+<div class="split-full reverse">
+  <div class="split-media reveal-scale">
+    <img src="assets/oxford-people2.jpg" alt="Birthday celebrations at Thirst Oxford">
+  </div>
+  <div class="split-text">
+    <span class="tag reveal-up">Celebrate</span>
+    <h2 class="word-reveal">Birthdays & Celebrations</h2>
+    <p class="reveal-up delay-2">Celebrating a birthday or special occasion with us? Lucky you. We know how to throw a good party.</p>
+    <p class="reveal-up delay-3">Hire a table, a section or — for more exclusivity — our whole lounge area. Fill out the booking form and we take care of the rest. We're happy to help you plan if you have something special in mind.</p>
+  </div>
+</div>
+
+<!-- PRIVATE HIRE -->
+<section class="hire-banner">
+  <div class="hire-inner">
+    <span class="tag reveal-up">Go Big</span>
+    <h2 class="word-reveal">Private Hire</h2>
+    <p class="reveal-up delay-2">If you are really fancy — good for you. We can be hired exclusively but only for very special events so get in touch to discuss.</p>
+    <div class="reveal-up delay-3">
+      <a href="contact.html" class="btn btn-violet"><span>Get in Touch</span></a>
     </div>
+  </div>
+</section>
 
-    <div class="booking-block reveal-up">
-      <span class="tag">Go Big</span>
-      <h2>Private Hire</h2>
-      <p>If you are really fancy — good for you. We can be hired exclusively but only for very special events so get in touch to discuss.</p>
-    </div>
-
-    <div class="booking-form reveal-up">
-      <h2>Get in Touch</h2>
-      <div class="form-grid">
-        <div class="form-group"><label>Name</label><input type="text" placeholder="Your name"></div>
-        <div class="form-group"><label>Email</label><input type="email" placeholder="Your email"></div>
-        <div class="form-group"><label>Phone</label><input type="tel" placeholder="Your number"></div>
-        <div class="form-group"><label>Date</label><input type="date"></div>
-        <div class="form-group"><label>Party Size</label><select><option>1-5</option><option>6-10</option><option>11-15</option><option>16-20</option><option>21-25</option><option>25+</option></select></div>
-        <div class="form-group"><label>Type</label><select><option>Table Booking</option><option>Birthday / Celebration</option><option>Private Hire</option><option>Other</option></select></div>
-        <div class="form-group full"><label>Message</label><textarea placeholder="Tell us about your plans..."></textarea></div>
-        <div class="form-submit"><button class="btn btn-violet" type="button"><span>Send Enquiry</span></button></div>
-      </div>
+<!-- BOOKING FORM -->
+<section class="form-section">
+  <div class="form-inner">
+    <h2 class="reveal-up">Make an Enquiry</h2>
+    <p class="form-sub reveal-up delay-1">Tell us what you're planning and we'll get back to you</p>
+    <div class="form-grid reveal-up delay-2">
+      <div class="form-group"><label>Name</label><input type="text" placeholder="Your name"></div>
+      <div class="form-group"><label>Email</label><input type="email" placeholder="Your email"></div>
+      <div class="form-group"><label>Phone</label><input type="tel" placeholder="Your number"></div>
+      <div class="form-group"><label>Date</label><input type="date"></div>
+      <div class="form-group"><label>Party Size</label><select><option>1–5</option><option>6–10</option><option>11–15</option><option>16–20</option><option>21–25</option><option>25+</option></select></div>
+      <div class="form-group"><label>Type</label><select><option>Table Booking</option><option>Birthday / Celebration</option><option>Private Hire</option><option>Other</option></select></div>
+      <div class="form-group full"><label>Message</label><textarea placeholder="Tell us about your plans..."></textarea></div>
+      <div class="form-submit"><button class="btn btn-violet" type="button"><span>Send Enquiry</span></button></div>
     </div>
   </div>
 </section>
@@ -479,6 +531,15 @@ function uc(){
 }
 setInterval(uc,1000);uc();
 
+// Word-by-word reveal
+document.querySelectorAll('.word-reveal').forEach(function(el){
+  var text=el.textContent.trim();
+  el.innerHTML=text.split(/\s+/).map(function(w,i){
+    return '<span class="word" style="transition-delay:'+(i*60)+'ms">'+w+'</span>';
+  }).join(' ');
+});
+// Force-play hero video (iOS)
+(function(){var v=document.querySelector('.page-hero-bg video');if(!v)return;v.play().catch(function(){document.addEventListener('touchstart',function h(){v.play();document.removeEventListener('touchstart',h)},{once:true})})})();
 
 </script>
 </body>
