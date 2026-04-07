@@ -51,8 +51,7 @@ body{font-family:'Belleza',serif;background:var(--bg);color:var(--white);overflo
 .hamburger{background:none;border:none;cursor:pointer;width:30px;height:20px;display:flex;flex-direction:column;justify-content:space-between;padding:0}
 .hamburger span{display:block;width:100%;height:1.5px;background:var(--white);transition:all .3s ease}
 .nav-logo{display:flex;justify-content:center}
-.logo-text{font-family:'Jost',sans-serif;font-size:1.4rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white);text-decoration:none}
-.logo-text .dot{color:var(--violet-bright)}
+.nav-logo-img{height:48px;width:auto;filter:invert(1)}
 .nav-right{display:flex;justify-content:flex-end;align-items:center}
 
 /* Buttons */
@@ -220,7 +219,7 @@ section{padding:100px 40px}
 /* ===== RESPONSIVE ===== */
 @media(max-width:900px){
   .nav{padding:16px 24px}
-  .logo-text{font-size:1.2rem}
+  .nav-logo-img{height:42px}
   section{padding:80px 24px}
   .spaces-grid{grid-template-columns:1fr 1fr}
   .dj-content{grid-template-columns:1fr;gap:40px}
@@ -230,7 +229,7 @@ section{padding:100px 40px}
 }
 @media(max-width:600px){
   .nav{padding:12px 16px}
-  .logo-text{font-size:1rem}
+  .nav-logo-img{height:36px}
   .btn-sm{padding:10px 20px;font-size:.55rem}
   section{padding:60px 16px}
   .hero h1{font-size:2.2rem}
@@ -264,7 +263,7 @@ section{padding:100px 40px}
   <div class="nav-left">
     <button class="hamburger" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
-  <div class="nav-logo"><a href="index.html" class="logo-text">Thirst<span class="dot">.</span></a></div>
+  <div class="nav-logo"><a href="index.html"><img src="assets/logo.png" alt="Thirst Oxford" class="nav-logo-img"></a></div>
   <div class="nav-right">
     <a href="https://www.designmynight.com/oxford/bars/oxford-city-centre/thirst-bar-oxford" target="_blank" rel="noopener" class="btn btn-sm btn-violet"><span>Book Now</span></a>
   </div>
@@ -324,7 +323,7 @@ section{padding:100px 40px}
 <section class="spaces" style="padding-top:40px">
   <div class="section-header reveal-up">
     <span class="tag">Your Space</span>
-    <h2>Four ways to Thirst</h2>
+    <h2>Three ways to Thirst</h2>
   </div>
   <div class="spaces-grid">
     <div class="space-card reveal-scale delay-1">
@@ -350,7 +349,7 @@ section{padding:100px 40px}
   <div class="stats-grid">
     <div class="stat-item reveal-up"><div class="num" data-count="27">0</div><div class="label">Years Running</div></div>
     <div class="stat-item reveal-up delay-1"><div class="num">3am</div><div class="label">Last Orders</div></div>
-    <div class="stat-item reveal-up delay-2"><div class="num">4</div><div class="label">Distinct Spaces</div></div>
+    <div class="stat-item reveal-up delay-2"><div class="num">3</div><div class="label">Distinct Spaces</div></div>
     <div class="stat-item reveal-up delay-3"><div class="num">DJs</div><div class="label">Every Night</div></div>
   </div>
 </section>
