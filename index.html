@@ -120,11 +120,16 @@ section{padding:100px 40px}
 .section-header h2{font-family:'Belleza',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;line-height:1.2}
 
 /* ===== INTRO ===== */
-.intro{padding:120px 40px}
-.intro-text{max-width:720px;margin:0 auto;text-align:center}
-.intro-text p{font-family:'Belleza',serif;font-size:1.1rem;line-height:1.85;color:var(--white-70);margin-bottom:28px}
+.intro{padding:100px 40px}
+.intro-split{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.intro-img{overflow:hidden;border-radius:2px;aspect-ratio:4/5}
+.intro-img img{width:100%;height:100%;object-fit:cover}
+.intro-text h2{font-family:'Belleza',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;line-height:1.2;margin:16px 0 24px}
+.intro-text p{font-family:'Belleza',serif;font-size:1.05rem;color:var(--white-70);line-height:1.8;margin-bottom:20px}
 .intro-text p em{font-style:italic;color:var(--white)}
-.intro-text .highlight{color:var(--white);font-size:1.25rem;line-height:1.7}
+.intro-ctas{display:flex;align-items:center;gap:24px;margin-top:32px;flex-wrap:wrap}
+.btn-text{font-family:'Jost',sans-serif;font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--violet-bright);text-decoration:none;transition:color .2s ease}
+.btn-text:hover{color:var(--white)}
 
 /* ===== SPACES ===== */
 .spaces-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;max-width:1100px;margin:0 auto}
@@ -174,12 +179,15 @@ section{padding:100px 40px}
 
 /* ===== REVIEWS ===== */
 .reviews-section{padding:100px 40px}
-.reviews-track{display:flex;gap:3px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:20px;scrollbar-width:none}
+.reviews-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:20px;scrollbar-width:none}
 .reviews-track::-webkit-scrollbar{display:none}
-.review-card{min-width:340px;max-width:400px;flex-shrink:0;scroll-snap-align:start;background:var(--bg-card);padding:40px 32px}
-.review-stars{color:var(--violet-bright);font-size:.85rem;letter-spacing:4px;margin-bottom:20px}
-.review-card blockquote{font-family:'Belleza',serif;font-size:1rem;line-height:1.7;color:var(--white-70);margin-bottom:24px;font-style:italic}
-.review-card cite{font-family:'Jost',sans-serif;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--white-30);font-style:normal}
+.review-card{min-width:300px;max-width:380px;flex-shrink:0;scroll-snap-align:start;padding:40px 28px;position:relative;overflow:hidden;border-radius:2px}
+.review-card-bg{position:absolute;inset:0}
+.review-card-bg img{width:100%;height:100%;object-fit:cover}
+.review-card-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,8,21,.75),rgba(13,8,21,.9))}
+.review-stars{position:relative;z-index:1;color:var(--violet-bright);font-size:.85rem;letter-spacing:4px;margin-bottom:20px}
+.review-card blockquote{position:relative;z-index:1;font-family:'Belleza',serif;font-size:.95rem;line-height:1.7;color:var(--white-70);margin-bottom:24px;font-style:italic}
+.review-card cite{position:relative;z-index:1;font-family:'Jost',sans-serif;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--white-30);font-style:normal}
 
 /* ===== MAP ===== */
 .map-section{position:relative;padding:0}
@@ -223,6 +231,8 @@ section{padding:100px 40px}
   section{padding:80px 24px}
   .spaces-grid{grid-template-columns:1fr 1fr}
   .dj-content{grid-template-columns:1fr;gap:40px}
+  .intro-split{grid-template-columns:1fr;gap:40px}
+  .intro-img{aspect-ratio:16/9}
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:30px}
   .footer-grid{grid-template-columns:repeat(2,1fr)}
   .reveal-left,.reveal-right{transform:translateY(40px)}
@@ -237,7 +247,7 @@ section{padding:100px 40px}
   .hours-grid{grid-template-columns:1fr}
   .btn{padding:14px 36px}
   .marquee-item{width:200px;height:260px}
-  .review-card{min-width:280px}
+  .review-card{min-width:260px;max-width:85vw}
   .map-overlay{padding:28px 24px;width:90%}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr}
@@ -311,11 +321,20 @@ section{padding:100px 40px}
 
 <!-- INTRO -->
 <section class="intro">
-  <div class="intro-text">
-    <p class="highlight reveal-up">Established in 1999 by two friends, our humble bar has been serving the best cocktails and high-energy late night parties ever since.</p>
-    <p class="reveal-up delay-1">From chilled catch-ups over delicious drinks to <em>how is it 3am already?</em> nights, we've got you.</p>
-    <p class="reveal-up delay-2">Join us in the main bar for pouring cocktails (including our renowned Stupid Hour) and plenty of spirits. Or check out our chill-out lounge space if you want to sit and talk — perfect for birthday hires.</p>
-    <p class="reveal-up delay-3">Outside, we have a heated, covered terrace with comfy seating and its own bar — rain or shine.</p>
+  <div class="intro-split">
+    <div class="intro-img reveal-left">
+      <img src="assets/oxford-people3.jpg" alt="Good times at Thirst Oxford">
+    </div>
+    <div class="intro-text reveal-right">
+      <span class="tag">Since 1999</span>
+      <h2>Established by two friends, still going strong</h2>
+      <p>Our humble bar has been serving the best cocktails and high-energy late night parties for over 25 years.</p>
+      <p>From chilled catch-ups over delicious drinks to <em>how is it 3am already?</em> nights, we've got you.</p>
+      <div class="intro-ctas">
+        <a href="bookings.html" class="btn"><span>Book a Table</span></a>
+        <a href="our-story.html" class="btn-text">Our Story →</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -438,10 +457,10 @@ section{padding:100px 40px}
     <h2>What people say</h2>
   </div>
   <div class="reviews-track">
-    <div class="review-card"><div class="review-stars">★★★★★</div><blockquote>"Best bar in Oxford, hands down. The cocktails are incredible and the vibe is always on point."</blockquote><cite>— Google Review</cite></div>
-    <div class="review-card"><div class="review-stars">★★★★★</div><blockquote>"We came for Stupid Hour and stayed until 3am. Absolute scenes on the dance floor."</blockquote><cite>— Google Review</cite></div>
-    <div class="review-card"><div class="review-stars">★★★★★</div><blockquote>"Such a gem. Friendly staff, amazing drinks and a proper late-night spot."</blockquote><cite>— Google Review</cite></div>
-    <div class="review-card"><div class="review-stars">★★★★★</div><blockquote>"Booked the lounge for a birthday — they went above and beyond. Will be back every weekend."</blockquote><cite>— Google Review</cite></div>
+    <div class="review-card"><div class="review-card-bg"><img src="assets/oxford-drink1.jpg" alt=""></div><div class="review-stars">★★★★★</div><blockquote>"Best bar in Oxford, hands down. The cocktails are incredible and the vibe is always on point."</blockquote><cite>— Google Review</cite></div>
+    <div class="review-card"><div class="review-card-bg"><img src="assets/oxford-people3.jpg" alt=""></div><div class="review-stars">★★★★★</div><blockquote>"We came for Stupid Hour and stayed until 3am. Absolute scenes on the dance floor."</blockquote><cite>— Google Review</cite></div>
+    <div class="review-card"><div class="review-card-bg"><img src="assets/oxford-drink4.jpg" alt=""></div><div class="review-stars">★★★★★</div><blockquote>"Such a gem. Friendly staff, amazing drinks and a proper late-night spot."</blockquote><cite>— Google Review</cite></div>
+    <div class="review-card"><div class="review-card-bg"><img src="assets/oxford-people4.jpg" alt=""></div><div class="review-stars">★★★★★</div><blockquote>"Booked the lounge for a birthday — they went above and beyond. Will be back every weekend."</blockquote><cite>— Google Review</cite></div>
   </div>
 </section>
 
