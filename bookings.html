@@ -61,7 +61,7 @@ body{font-family:'Belleza',serif;background:var(--bg);color:var(--white);overflo
 .btn:hover{color:var(--bg);border-color:var(--white);transform:translateY(-2px)}
 .btn:hover::before{transform:scaleX(1);transform-origin:left}
 .btn span{position:relative;z-index:1}
-.btn-sm{padding:12px 32px;font-size:.6rem}
+.btn-sm{padding:10px 22px;font-size:.55rem}
 .btn-violet{border-color:var(--violet);color:var(--violet-bright)}
 .btn-violet::before{background:var(--violet)}
 .btn-violet:hover{color:var(--white)}
@@ -274,10 +274,10 @@ section{padding:100px 40px}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
 /* Full-bleed split sections */
-.split-full{display:grid;grid-template-columns:1fr 1fr;min-height:80vh}
+.split-full{display:grid;grid-template-columns:1fr 1fr;min-height:500px}
 .split-full.reverse .split-media{order:2}
 .split-full.reverse .split-text{order:1}
-.split-media{position:relative;overflow:hidden}
+.split-media{position:relative;overflow:hidden;max-height:600px}
 .split-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
 .split-media:hover img{transform:scale(1.03)}
 .split-text{display:flex;flex-direction:column;justify-content:center;padding:80px 80px}
@@ -395,7 +395,7 @@ section{padding:100px 40px}
 <!-- TABLE RESERVATIONS -->
 <div class="split-full reverse">
   <div class="split-media reveal-scale">
-    <img src="assets/oxford-people3.jpg" alt="Friends enjoying drinks at Thirst Oxford">
+    <img src="assets/oxford-people4.jpg" alt="Friends enjoying drinks at Thirst Oxford">
   </div>
   <div class="split-text">
     <span class="tag reveal-up">Reserve</span>
